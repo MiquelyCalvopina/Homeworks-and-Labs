@@ -7,7 +7,6 @@ package ec.edu.espe.lab9_controlsentences.model;
 
 import java.util.Calendar;
 
-
 /**
  *
  * @author Miqui
@@ -17,26 +16,42 @@ public class Person {
     private int ageYear,ageMonth,ageDay;
     private int actualYear,actualMonth,actualDay; 
     
-    public int calculateAge (Calendar bornDate){
+    public void calcAge(int bornYear,int bornMonth,int bornDay){
         
         Calendar today = Calendar.getInstance();
         
         Operation operation = new Operation();
         actualYear=today.get(Calendar.YEAR);
-        actualMonth=today.get(Calendar.MONTH);
+        actualMonth=today.get(Calendar.MONTH)+1;
         actualDay=today.get(Calendar.DAY_OF_MONTH);
         
-        ageYear = operation.subs(actualYear,bornDate.get(Calendar.YEAR));
-        ageMonth = operation.subs(actualMonth,bornDate.get(Calendar.MONTH));
-        ageDay = operation.subs(actualDay,bornDate.get(Calendar.DAY_OF_MONTH));        
-       
-        if(ageMonth < 0 || (ageMonth==0 && ageDay<0)){
-            ageYear--;
+        if(actualMonth > bornMonth){
+            
+                ageYear = operation.subs(actualYear, bornYear);
+                if(actualDay < bornDay){
+                    ageMonth = operation.subs(actualMonth, bornMonth);
+                    ageMonth = operation.subs(ageMonth,1);
+                    ageDay=operation.subs(31,bornDay);
+                    ageDay=operation.add(ageDay, actualDay);
+                }else{
+                    ageMonth = operation.subs(actualMonth, bornMonth);
+                    ageDay = operation.subs(actualDay, bornDay);
+                }
+        }else{
+                ageYear = operation.subs(actualYear, bornYear);
+                ageYear = operation.subs(ageYear, 1);
+                ageMonth = actualMonth;
+                ageDay = actualDay;
         }
-        return ageYear;
+        
+        if(ageYear < 0){
+            System.out.println("LA PERSONA AÚN NO HA NACIDO");
+        }else{
+            System.out.println("USTED TIENE: " + ageYear + " AÑOS, " + ageMonth + " MESES Y " + ageDay + " DIAS");   
+        }
     }
-
-    public Person(int day, int month, int year) {
+    
+    public Person(int year, int month, int day) {
         this.bornDay = day;
         this.bornMonth = month;
         this.bornYear = year;
@@ -118,6 +133,6 @@ public class Person {
     public void setAgeDay(int ageDay) {
         this.ageDay = ageDay;
     }
-    
+
     
 }
