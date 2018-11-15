@@ -9,7 +9,7 @@ package ec.edu.espe.lab9_controlsentences.model;
  *
  * @author Miqui
  */
-public class Operation {
+public class Operations {
     private int operand1;
     private int operand2;
     private int result;
@@ -42,5 +42,4 @@ public class Operation {
      }
      return cont;
     }
-    
 }

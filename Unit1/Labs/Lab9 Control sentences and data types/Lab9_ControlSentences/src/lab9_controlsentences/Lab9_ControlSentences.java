@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Miqui
  */
-public class Lab9_ControlSentencesAndOperators {
+public class Lab9_ControlSentences {
 
     /**
      * @param args the command line arguments
