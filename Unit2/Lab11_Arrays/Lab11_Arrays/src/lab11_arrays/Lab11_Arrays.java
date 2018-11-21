@@ -28,7 +28,7 @@ public class Lab11_Arrays {
         Files filen = new Files();
         File file = new File("archivo.csv");
         
-        for(int i=0;i<person.length;i++){
+        for(int i=0; i<person.length; i++){
         
             System.out.print("INGRESE EL NOMBRE: ");
             name = in.nextLine();
