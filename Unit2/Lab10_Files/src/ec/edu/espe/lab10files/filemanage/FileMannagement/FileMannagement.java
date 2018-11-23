@@ -46,7 +46,7 @@ public class FileMannagement {
         }
     }//arreglos tipos de datos prim y de obj, coger todo el objeto y gusrdar en el archivo 
     
-    public ArrayList<String> read(File file){
+    public ArrayList<String> reads(File file){
         ArrayList<String> line = new ArrayList<String>();
         
         try{
@@ -64,7 +64,7 @@ public class FileMannagement {
         return line;
     }
     
-    public ArrayList<String> read(File file){
+    public ArrayList<String> readn(File file){
         ArrayList<String> line = new ArrayList<String>();
         
         try{
@@ -85,7 +85,7 @@ public class FileMannagement {
     
     public void modifyFile(File file, String name, String inString, boolean check){
         ArrayList<String> line = new ArrayList<String>();
-        line = read(file);
+        line = reads(file);
         
         if(check){
             for (int i = 0; i < line.size()-1; i++)
