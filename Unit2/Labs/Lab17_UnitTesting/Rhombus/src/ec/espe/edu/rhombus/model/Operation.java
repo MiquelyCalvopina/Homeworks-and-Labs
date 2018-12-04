@@ -5,6 +5,9 @@
  */
 package ec.espe.edu.rhombus.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  *
  * @author Miqui
@@ -29,7 +32,9 @@ public class Operation {
                 perimeter = -1;
             }
         }
-     return perimeter;   
+     BigDecimal bd = new BigDecimal(perimeter);
+     bd = bd.setScale(2, RoundingMode.HALF_UP);
+     return bd.doubleValue();
     }
     
     public double area(double minorDiag, double greaterDiag){
@@ -48,8 +53,9 @@ public class Operation {
                 area = -1;
             }
         }
-        
-        return area;
+    BigDecimal bd = new BigDecimal(area);
+    bd = bd.setScale(2, RoundingMode.HALF_UP);
+    return bd.doubleValue();
     }
         
     
