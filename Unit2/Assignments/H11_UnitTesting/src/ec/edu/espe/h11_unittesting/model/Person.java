@@ -94,8 +94,9 @@ public class Person {
                     System.out.print("INGRESE EL AÑO DE NACIMIENTO(AAAA): ");
                     person.setBirthYear(in.nextInt());
                     cont=1;
-                }catch(Exception ex){
+                }catch(NumberFormatException ex){
                     cont=0;
+                    System.out.println("Solo ingrese numeros");
                 }
                 
             }while(cont==0);
@@ -107,7 +108,7 @@ public class Person {
                     System.out.print("INGRESE EL MES DE NACIMIENTO(MM): ");
                     person.setBirthMonth(in.nextInt());    
                     cont=1;
-                }catch(Exception ex){
+                }catch(NumberFormatException ex){
                     cont=0;
                 }
                 
@@ -120,7 +121,7 @@ public class Person {
                     System.out.print("INGRESE EL DIA DE NACIMIENTO(DD): ");
                     person.setBirthDay(in.nextInt());
                     cont=1;
-                }catch(Exception ex){
+                }catch(NumberFormatException ex){
                     cont=0;
                 }
                 

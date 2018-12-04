@@ -20,7 +20,7 @@ public class H11_UnitTesting {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args){
         
         Scanner in = new Scanner (System.in);
         
@@ -28,6 +28,7 @@ public class H11_UnitTesting {
         String option,option2;
         int elected,elected2,result;
         
+        try{
         FileMannagment filen = new FileMannagment();
         File file = new File ("archivo.csv");
         
@@ -109,7 +110,12 @@ public class H11_UnitTesting {
             default:
                 System.out.println("Elección incorrecta");
            
-        } 
+        }
+        
+        }catch(Exception ex){
+            System.out.println("END OF PROGRAM");
+    }
+    
 
     }
     
