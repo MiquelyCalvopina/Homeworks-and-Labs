@@ -40,80 +40,69 @@ public class PersonTest {
     /**
      * Test of calcAge method, of class Person.
      */
-    @Test
+    /*@Test
     public void testCalcAge() {
-        System.out.println("calcAge");
-        Person instance = new Person(25,03,1997,0,0,0);
-        int birthDay = 27;
-        int birthMonth = 03;
-        int birthYear = 1997;
         
-        int ageDay = 7;
-        int ageMonth = 8;
-        int ageYear = 19;
+        System.out.println("calcAge");
+        int birthDay = 28;
+        int birthMonth = 05;
+        int birthYear = 1998;
+        int ageDay = 16;
+        int ageMonth = 6;
+        int ageYear = 20;
+        Person instance = new Person(25,03,1997,0,0,0);
         instance.calcAge(birthYear, birthMonth, birthDay);
         assertEquals(ageDay, instance.getAgeDay());
         assertEquals(ageMonth, instance.getAgeMonth());
         assertEquals(ageYear, instance.getAgeYear());        
         System.out.println("La edad es correcta");
+        
+        System.out.println("calcAge");
+        birthDay = 27;
+        birthMonth = 05;
+        birthYear = 1997;
+        ageDay = 17;
+        ageMonth = 06;
+        ageYear = 21;
+        instance.calcAge(birthYear, birthMonth, birthDay);
+        assertEquals(ageDay, instance.getAgeDay());
+        assertEquals(ageMonth, instance.getAgeMonth());
+        assertEquals(ageYear, instance.getAgeYear());        
+        System.out.println("La edad es correcta");
+        
+        
     }
 
-    /**
-     * Test of entry method, of class Person.
-     */
-    @Test
-    public void testEntry() {
-        System.out.println("entry");
-        Person instance = null;
-        String expResult = "";
-        //String result = instance.entry();
-        //assertEquals(expResult, result);
-        //fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of leapYear method, of class Person.
-     */
-    @Test
-    public void testLeapYear() {
-        System.out.println("leapYear");
-        int year = 0;
-        Person instance = null;
-        boolean expResult = false;
-        boolean result = instance.leapYear(year);
-        assertEquals(expResult, result);
-        //fail("The test case is a prototype.");
-    }
 
     /**
      * Test of validate method, of class Person.
      */
-    @Test
+    /*@Test
     public void testValidate() {
         System.out.println("validate");
         int year = 1997;
-        int month = 03;
+        int month = 3;
         int day = 27;
         Person instance = new Person(0,0,0, 0, 0, 0);
-        boolean expResult = false;
-        boolean result = instance.validate(year, month, day);
+        int expResult = 0;
+        int result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es correcto");
         
         System.out.println("validate");
         year = 1996;
         month = 12;
-        day = 23;
-        expResult = false;
+        day = 32;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
-        System.out.println("El ingreso es correcto");
+        System.out.println("El ingreso es incorrecto");
         
         System.out.println("validate");
-        year = 2012;
-        month = 02;
-        day = 29;
-        expResult = false;
+        year = 0;
+        month = 0;
+        day = 0;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es correcto");   
@@ -122,7 +111,7 @@ public class PersonTest {
         year = 1998;
         month = 02;
         day = 29;
-        expResult = true;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");      
@@ -131,7 +120,7 @@ public class PersonTest {
         year = 0;
         month = -18;
         day = 2;
-        expResult = true;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");   
@@ -140,7 +129,7 @@ public class PersonTest {
         year = 1998;
         String month1 = "Mayo";
         day = 1;
-        expResult = true;
+        expResult = -1;
         //result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");   
@@ -149,7 +138,7 @@ public class PersonTest {
         year = 1998;
         month = 02;
         day = 33;
-        expResult = true;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");   
@@ -158,7 +147,7 @@ public class PersonTest {
         year = 1998;
         month = 04;
         day = 32;
-        expResult = true;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");   
@@ -167,7 +156,7 @@ public class PersonTest {
         year = 8;
         month = -1;
         day = 36;
-        expResult = true;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");   
@@ -176,200 +165,94 @@ public class PersonTest {
         year = 2019;
         month = 02;
         day = 29;
-        expResult = true;
+        expResult = -1;
         result = instance.validate(year, month, day);
         assertEquals(expResult, result);
         System.out.println("El ingreso es incorrecto");   
         
     }
-
     /**
-     * Test of getName method, of class Person.
+     * Test of validate method, of class Person.
      */
     @Test
-    public void testGetName() {
-        System.out.println("getName");
-        Person instance = null;
-        String expResult = "";
-        String result = instance.getName();
+    public void testValidate1() {
+        System.out.println("validate");
+        int year = 2015;
+        int month = 2;
+        int day = 29;
+        Person instance = new Person(0,0,0, 0, 0, 0);
+        int expResult = -1;
+        int result = instance.validate(year, month, day);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setName method, of class Person.
-     */
-    @Test
-    public void testSetName() {
-        System.out.println("setName");
-        String name = "";
-        Person instance = null;
-        instance.setName(name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getBirthDay method, of class Person.
-     */
-    @Test
-    public void testGetBirthDay() {
-        System.out.println("getBirthDay");
-        Person instance = null;
-        int expResult = 0;
-        int result = instance.getBirthDay();
+        System.out.println("El ingreso es incorrecto");
+        
+        System.out.println("validate");
+        year = 2016;
+        month = 4;
+        day = 31;
+        expResult = -1;
+        result = instance.validate(year, month, day);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setBirthDay method, of class Person.
-     */
-    @Test
-    public void testSetBirthDay() {
-        System.out.println("setBirthDay");
-        int birthDay = 0;
-        Person instance = null;
-        instance.setBirthDay(birthDay);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getBirthMonth method, of class Person.
-     */
-    @Test
-    public void testGetBirthMonth() {
-        System.out.println("getBirthMonth");
-        Person instance = null;
-        int expResult = 0;
-        int result = instance.getBirthMonth();
+        System.out.println("El ingreso es incorrecto");   
+        
+        System.out.println("validate");
+        year = 2013;
+        month = 11;
+        day = 31;
+        expResult = -1;
+        result = instance.validate(year, month, day);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setBirthMonth method, of class Person.
-     */
-    @Test
-    public void testSetBirthMonth() {
-        System.out.println("setBirthMonth");
-        int birthMonth = 0;
-        Person instance = null;
-        instance.setBirthMonth(birthMonth);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getBirthYear method, of class Person.
-     */
-    @Test
-    public void testGetBirthYear() {
-        System.out.println("getBirthYear");
-        Person instance = null;
-        int expResult = 0;
-        int result = instance.getBirthYear();
+        System.out.println("El ingreso es incorrecto");  
+        
+        System.out.println("validate");
+        year = 1970;
+        month = 12;
+        day = 17;
+        expResult = 0;
+        result = instance.validate(year, month, day);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setBirthYear method, of class Person.
-     */
-    @Test
-    public void testSetBirthYear() {
-        System.out.println("setBirthYear");
-        int birthYear = 0;
-        Person instance = null;
-        instance.setBirthYear(birthYear);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getAgeYear method, of class Person.
-     */
-    @Test
-    public void testGetAgeYear() {
-        System.out.println("getAgeYear");
-        Person instance = null;
-        int expResult = 0;
-        int result = instance.getAgeYear();
+        System.out.println("El ingreso es correcto");
+        
+        System.out.println("validate");
+        year = 1970;
+        month = 12;
+        day = 13;
+        expResult = 0;
+        result = instance.validate(year, month, day);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        System.out.println("El ingreso es correcto");
     }
-
     /**
-     * Test of setAgeYear method, of class Person.
+     * Test of calcAge method, of class Person.
      */
     @Test
-    public void testSetAgeYear() {
-        System.out.println("setAgeYear");
-        int ageYear = 0;
-        Person instance = null;
-        instance.setAgeYear(ageYear);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testCalcAge1() {
+        
+        System.out.println("calcAge");
+        int birthDay = 17;
+        int birthMonth = 12;
+        int birthYear = 1970;
+        int ageDay = 27;
+        int ageMonth = 11;
+        int ageYear = 47;
+        Person instance = new Person(25,03,1997,0,0,0);
+        instance.calcAge(birthYear, birthMonth, birthDay);
+        assertEquals(ageDay, instance.getAgeDay());
+        assertEquals(ageMonth, instance.getAgeMonth());
+        assertEquals(ageYear, instance.getAgeYear());        
+        System.out.println("La edad es correcta");
+        
+        System.out.println("calcAge");
+        birthDay = 17;
+        birthMonth = 12;
+        birthYear = 1970;
+        ageDay = 26;
+        ageMonth = 12;
+        ageYear = 48;
+        instance.calcAge(birthYear, birthMonth, birthDay);
+        assertEquals(ageDay, instance.getAgeDay());
+        assertEquals(ageMonth, instance.getAgeMonth());
+        assertEquals(ageYear, instance.getAgeYear());        
+        System.out.println("La edad es correcta");
     }
-
-    /**
-     * Test of getAgeMonth method, of class Person.
-     */
-    @Test
-    public void testGetAgeMonth() {
-        System.out.println("getAgeMonth");
-        Person instance = null;
-        int expResult = 0;
-        int result = instance.getAgeMonth();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setAgeMonth method, of class Person.
-     */
-    @Test
-    public void testSetAgeMonth() {
-        System.out.println("setAgeMonth");
-        int ageMonth = 0;
-        Person instance = null;
-        instance.setAgeMonth(ageMonth);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getAgeDay method, of class Person.
-     */
-    @Test
-    public void testGetAgeDay() {
-        System.out.println("getAgeDay");
-        Person instance = null;
-        int expResult = 0;
-        int result = instance.getAgeDay();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setAgeDay method, of class Person.
-     */
-    @Test
-    public void testSetAgeDay() {
-        System.out.println("setAgeDay");
-        int ageDay = 0;
-        Person instance = null;
-        instance.setAgeDay(ageDay);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    
 }

@@ -69,7 +69,7 @@ public class Person {
                     ageDay = currentDay;
                     }
             }
-
+            
             System.out.println("USTED TIENE: " + ageYear + " AÑOS, " + ageMonth + " MESES Y " + ageDay + " DIAS");   
             
         }
@@ -128,7 +128,7 @@ public class Person {
             }while(cont==0);
             
             
-        }while(person.validate(person.getBirthYear(),person.getBirthMonth(),person.getBirthDay())==true);
+        }while(person.validate(person.getBirthYear(),person.getBirthMonth(),person.getBirthDay())==-1);
         
         person.calcAge(person.getBirthYear(),person.getBirthMonth(),person.getBirthDay());   
         data = person.getName() + ";" + person.getAgeYear() + ";" + person.getAgeMonth() + ";" + person.getAgeDay();
@@ -149,42 +149,42 @@ public class Person {
     return leapYear;
     }
     
-    public boolean validate(int year,int month, int day){
-        boolean alert=false;
-        
-            if (year < 0 || month < 0 || month > 12 || day < 0 || day > 31) {
+    public int validate(int year,int month, int day){
+        int alert=0;
+        try{
+            if (year <= 0 || month <= 0 || month > 12 || day <= 0 ) {
                 System.out.println("La fecha ingresada es incorrecta");
-                alert=true;            
+                alert=-1;            
             }
-            if(leapYear(year)==false){
+            /*if(leapYear(year)==false){
                 if(day==29){
                     System.out.println("La fecha ingresada es incorrecta");
                     alert=true;
                 }
-            }
+            }*/
             switch (month){
                 case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                     if(day>31){
                         System.out.println("La fecha ingresada es incorrecta");
-                        alert=true;  
+                        alert=-1;  
                     }
                 break;
                 case 4: case 6: case 9: case 11:
                     if(day>30){
                         System.out.println("La fecha ingresada es incorrecta");
-                        alert=true;  
+                        alert=-1;  
                     }
                 break;
                 case 2:
                     if(leapYear(year)==true){
                         if(day>29)
                             System.out.println("La fecha ingresada es incorrecta");
-                            alert=true;  
+                            alert=-1;  
                     }
                     else{
                         if(day>28){
                             System.out.println("La fecha ingresada es incorrecta");
-                            alert=true;
+                            alert=-1;
                         }
                     }
                 break;
@@ -197,31 +197,27 @@ public class Person {
         
         if(year>currentYear){
             System.out.println("La fecha ingresada es incorrecta, la persona aún no nace");
-            alert=true; 
+            alert=-1; 
         }
         
         if(year==currentYear){
             if(month>currentMonth){
                 if(day>currentDay){
                     System.out.println("La fecha ingresada es incorrecta, la persona aún no nace");
-                    alert=true; 
+                    alert=-1; 
                 }
             }
         }
+//        
+//        if(birthYear<1700){
+//                alert=true;
+//        }
+        }catch(NumberFormatException e){
+            System.out.println("Solo dbe ingresar numeros");
+            alert=-1;
+        }
+    return alert;
         
-        if(year==currentYear){
-            if(month==currentMonth){
-                if(day>currentDay){
-                    System.out.println("La fecha ingresada es incorrecta, la persona aún no nace");
-                    alert=true;                      
-                }
-            }
-        }
-                    
-        if(birthYear<1700){
-                alert=true;
-        }
-        return alert;
     }
 
     public Person(int birthDay, int birthMonth, int birthYear, int ageYear, int ageMonth, int ageDay) {
