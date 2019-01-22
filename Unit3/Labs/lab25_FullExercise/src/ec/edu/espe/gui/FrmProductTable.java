@@ -40,7 +40,7 @@ public class FrmProductTable extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProducts = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
+        lblProduct = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +57,7 @@ public class FrmProductTable extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblProducts);
 
-        jLabel1.setText("Productos");
+        lblProduct.setText("Productos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,14 +70,14 @@ public class FrmProductTable extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(173, 173, 173)
-                        .addComponent(jLabel1)))
+                        .addComponent(lblProduct)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 23, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(lblProduct)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -139,8 +139,8 @@ public class FrmProductTable extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblProduct;
     private javax.swing.JTable tblProducts;
     // End of variables declaration//GEN-END:variables
 }

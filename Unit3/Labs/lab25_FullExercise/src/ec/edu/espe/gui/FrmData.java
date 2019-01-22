@@ -35,41 +35,38 @@ public class FrmData extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblProduct = new javax.swing.JLabel();
+        lblId = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        lblPrice = new javax.swing.JLabel();
+        lblPercent = new javax.swing.JLabel();
         txtId = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtPrice = new javax.swing.JTextField();
         txtPercent = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lblPercentSymbol = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Producto");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 29, -1, -1));
+        lblProduct.setText("Producto");
+        getContentPane().add(lblProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 29, -1, -1));
 
-        jLabel2.setText("Id:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
+        lblId.setText("Id:");
+        getContentPane().add(lblId, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
-        jLabel3.setText("Nombre:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
+        lblName.setText("Nombre:");
+        getContentPane().add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
-        jLabel4.setText("Precio:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
+        lblPrice.setText("Precio:");
+        getContentPane().add(lblPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, -1, -1));
 
-        jLabel5.setText("Porcentaje:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 225, -1, -1));
-
-        txtId.setText("jTextField1");
+        lblPercent.setText("Porcentaje:");
+        getContentPane().add(lblPercent, new org.netbeans.lib.awtextra.AbsoluteConstraints(103, 225, -1, -1));
         getContentPane().add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 160, -1));
 
-        txtName.setText("jTextField2");
         txtName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNameKeyPressed(evt);
@@ -77,7 +74,6 @@ public class FrmData extends javax.swing.JFrame {
         });
         getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 160, -1));
 
-        txtPrice.setText("jTextField3");
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPriceActionPerformed(evt);
@@ -90,7 +86,6 @@ public class FrmData extends javax.swing.JFrame {
         });
         getContentPane().add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, 160, -1));
 
-        txtPercent.setText("jTextField4");
         txtPercent.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtPercentKeyTyped(evt);
@@ -106,16 +101,16 @@ public class FrmData extends javax.swing.JFrame {
         });
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 262, -1, -1));
 
-        jLabel6.setText("%");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
+        lblPercentSymbol.setText("%");
+        getContentPane().add(lblPercentSymbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("Regresar");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -154,11 +149,11 @@ public class FrmData extends javax.swing.JFrame {
         this.verificationJustNumbers(validar, txtPercent);
     }//GEN-LAST:event_txtPercentKeyTyped
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         FrmChoose frmChoose = new FrmChoose();
         frmChoose.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,14 +216,14 @@ public class FrmData extends javax.swing.JFrame {
     }  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel lblId;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JLabel lblPercent;
+    private javax.swing.JLabel lblPercentSymbol;
+    private javax.swing.JLabel lblPrice;
+    private javax.swing.JLabel lblProduct;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPercent;

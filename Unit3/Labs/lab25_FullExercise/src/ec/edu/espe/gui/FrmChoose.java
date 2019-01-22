@@ -32,7 +32,7 @@ public class FrmChoose extends javax.swing.JFrame {
     private void initComponents() {
 
         cboPerfilChooser = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        lblProfile = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,8 +43,8 @@ public class FrmChoose extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Perfil");
+        lblProfile.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblProfile.setText("Perfil");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,7 +53,7 @@ public class FrmChoose extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(163, 163, 163)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(lblProfile)
                     .addComponent(cboPerfilChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(155, Short.MAX_VALUE))
         );
@@ -61,7 +61,7 @@ public class FrmChoose extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(jLabel1)
+                .addComponent(lblProfile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(cboPerfilChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(98, 98, 98))
@@ -126,6 +126,6 @@ public class FrmChoose extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cboPerfilChooser;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblProfile;
     // End of variables declaration//GEN-END:variables
 }
