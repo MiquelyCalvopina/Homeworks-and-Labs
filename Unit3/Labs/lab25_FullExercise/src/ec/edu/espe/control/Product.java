@@ -23,6 +23,7 @@ public class Product {
         text = product.getId()+";"+product.getName()+";"+product.getPrice()+";"+product.getPercent()+";"+product.getPvp()+";";
         return text;
     }
+    
     public void saveData(){
         String text;
         FileManager file = new FileManager();
@@ -32,6 +33,7 @@ public class Product {
         text = product.dataToString(this);
         file.save("Productos.csv",text);
     }
+    
     public void calcPVP(){
         this.price = this.price;
         this.percent = this.percent/100;

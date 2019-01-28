@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.utils;
 
-import ec.edu.espe.control.Product;
+import ec.edu.espe.model.Projectile;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -73,19 +73,19 @@ public class FileManager {
     { 
         File file =new File(fileName);
 
-        if(fileName=="Productos.csv" || fileName.equals("Productos.csv"))
+        if(fileName=="Proyectil.csv" || fileName.equals("Proyectil.csv"))
             {
                if (!file.exists()) {
                   String text;
-                  text="ID;Nombre;Precio;Porcentaje;PVP";
+                  text="Greados;Velocidad Inicial;Distancia";
                    this.save(fileName,text);
                   return;
              }
             }
     }
         
-    public ArrayList<Product> readProduct(String fileName) throws IOException{
-           ArrayList<Product> products=new ArrayList<>();
+    public ArrayList<Projectile>readProjectile(String fileName) throws IOException{
+           ArrayList<Projectile> projectiles=new ArrayList<>();
             String line= null;
             String text;
             File file = new File (fileName);
@@ -96,23 +96,21 @@ public class FileManager {
                      BufferedReader read = new BufferedReader(new FileReader(fileName));
                      while((line=read.readLine())!=null)
                      {
-                         Product product = new Product();
+                         Projectile projectile = new Projectile();
                          cont++;
                          StringTokenizer mistokens = new StringTokenizer(line, ";");
-                         String id = mistokens.nextToken().trim();
-                         String name =  mistokens.nextToken().trim();
-                         String price =  mistokens.nextToken().trim();
-                         String percent =  mistokens.nextToken().trim();
-                         String pvp =  mistokens.nextToken().trim();
+                         String degrees = mistokens.nextToken().trim();
+                         String initialVel =  mistokens.nextToken().trim();
+                         String gravity =  mistokens.nextToken().trim();
+                         String distance =  mistokens.nextToken().trim();
                          
                          if (cont!=1)
                          {
-                         product.setId(id);
-                         product.setName(name);
-                         product.setPrice(Float.parseFloat(price));
-                         product.setPercent(Float.parseFloat(percent));
-                         product.setPvp(Float.parseFloat(pvp));
-                         products.add(product);
+                         projectile.setDegrees(Float.parseFloat(degrees));
+                         projectile.setInitialVel(Float.parseFloat(initialVel));
+                         projectile.setGravity(Float.parseFloat(gravity));
+                         projectile.setDistance(Float.parseFloat(distance));
+                         projectiles.add(projectile);
                          }
                          
                     }                 
@@ -122,7 +120,7 @@ public class FileManager {
                  }
 
              }
-return products;
+return projectiles;
     }
     
 }
